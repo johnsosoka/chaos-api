@@ -133,9 +133,9 @@ flowchart TD
     end
 
     subgraph Routes
-        Health[/health]
-        Metrics[/metrics]
-        CatchAll[/{path}]
+        Health[health]
+        Metrics[metrics]
+        CatchAll[catch all]
     end
 ```
 
