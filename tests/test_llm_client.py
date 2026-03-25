@@ -75,7 +75,7 @@ class TestLLMClientGenerateResponse:
                     query_params={},
                     headers={},
                     body=None,
-                    mime_type="application/json"
+                    mime_type="application/json",
                 )
 
             assert result == '{"id": 1, "name": "Test User"}'
@@ -101,7 +101,7 @@ class TestLLMClientGenerateResponse:
                     query_params={},
                     headers={},
                     body=None,
-                    mime_type="application/json"
+                    mime_type="application/json",
                 )
 
             assert result == '{"test": "value"}'
@@ -126,7 +126,7 @@ class TestLLMClientGenerateResponse:
                             query_params={"page": "1"},
                             headers={"Authorization": "Bearer token"},
                             body='{"name": "John"}',
-                            mime_type="application/json"
+                            mime_type="application/json",
                         )
 
                     mock_system.assert_called_once_with("application/json")
@@ -136,5 +136,5 @@ class TestLLMClientGenerateResponse:
                         query_params={"page": "1"},
                         headers={"Authorization": "Bearer token"},
                         body='{"name": "John"}',
-                        mime_type="application/json"
+                        mime_type="application/json",
                     )

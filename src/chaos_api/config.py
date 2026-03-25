@@ -30,20 +30,14 @@ class Settings(BaseSettings):
     port: int = Field(default=8000, description="Server port")
 
     # Rate Limiting
-    rate_limit_requests: int = Field(
-        default=100,
-        description="Maximum requests per window per IP"
-    )
-    rate_limit_window: int = Field(
-        default=60,
-        description="Rate limit window in seconds"
-    )
+    rate_limit_requests: int = Field(default=100, description="Maximum requests per window per IP")
+    rate_limit_window: int = Field(default=60, description="Rate limit window in seconds")
 
     # Logging
     log_level: str = Field(default="INFO", description="Logging level")
     request_log_format: str = Field(
         default="%(asctime)s - %(request_id)s - %(method)s %(path)s - %(status_code)s - %(duration_ms).2fms",
-        description="Request log format string"
+        description="Request log format string",
     )
 
 

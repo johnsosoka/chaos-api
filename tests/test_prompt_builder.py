@@ -143,12 +143,7 @@ class TestBuildUserPrompt:
         """Should handle POST request with body correctly."""
         body = json.dumps({"product_id": "abc123", "quantity": 2})
         result = build_user_prompt(
-            "POST",
-            "/orders",
-            {},
-            {"Content-Type": "application/json"},
-            body,
-            "application/json"
+            "POST", "/orders", {}, {"Content-Type": "application/json"}, body, "application/json"
         )
         assert "HTTP Method: POST" in result
         assert "Path: /orders" in result

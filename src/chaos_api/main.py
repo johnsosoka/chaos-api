@@ -73,9 +73,7 @@ def _extract_headers(request: Request) -> dict:
         A dictionary of header name → value pairs.
     """
     return {
-        key: value
-        for key, value in request.headers.items()
-        if key.lower() not in _FILTERED_HEADERS
+        key: value for key, value in request.headers.items() if key.lower() not in _FILTERED_HEADERS
     }
 
 
