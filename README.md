@@ -122,7 +122,7 @@ flowchart TD
     Router --> Handler[Request Handler]
     Handler --> MIME[MIME Handler]
     Handler --> Prompt[Prompt Builder]
-    Prompt --> LLM[LLM Client<br/>LangChain + OpenAI]
+    Prompt --> LLM[LLM Client LangChain + OpenAI]
     LLM --> Handler
     Handler --> Response[Response]
 
