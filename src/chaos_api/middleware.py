@@ -101,7 +101,7 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                 content='{"error": "Rate limit exceeded"}',
                 status_code=429,
                 media_type="application/json",
-                headers={"Retry-After": str(self.window_seconds)}
+                headers={"Retry-After": str(self.window_seconds)},
             )
 
         result: Response = await call_next(request)
