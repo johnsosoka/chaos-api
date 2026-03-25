@@ -23,7 +23,8 @@ FROM python:3.12-slim AS production
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONFAULTHANDLER=1 \
-    PORT=8000
+    PORT=8000 \
+    PYTHONPATH=/app/src
 
 # Create non-root user for security
 RUN groupadd -r appuser && useradd -r -g appuser appuser

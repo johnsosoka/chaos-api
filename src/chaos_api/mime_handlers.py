@@ -1,5 +1,6 @@
 """MIME type detection and request body parsing for the chaos API."""
 
+import contextlib
 import json
 
 SUPPORTED_MIME_TYPES: list[str] = [
@@ -43,10 +44,8 @@ def detect_mime_type(accept_header: str | None) -> str:
         for param in parts[1:]:
             param = param.strip()
             if param.startswith("q="):
-                try:
+                with contextlib.suppress(ValueError):
                     quality = float(param[2:])
-                except ValueError:
-                    pass
 
         candidates.append((quality, media_type))
 

@@ -3,8 +3,7 @@ name: Documentation
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -27,26 +26,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: 1.8.0
-
-      - name: Install dependencies
-        run: |
-          poetry install --with docs --no-interaction
-          pip install mkdocs-material
+      - name: Install MkDocs
+        run: pip install mkdocs-material
 
       - name: Build documentation
         run: |
           mkdir -p docs
           cp README.md docs/index.md
           cp CONTRIBUTING.md docs/contributing.md
-          poetry run python -c "
-          import mkdocs.config
-          import mkdocs.commands.build
-          mkdocs.commands.build.build(mkdocs.config.load_config())
-          " || mkdocs build
+          mkdocs build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
