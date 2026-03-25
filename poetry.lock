@@ -2470,5 +2470,5 @@ dev = ["httpx", "mypy", "pre-commit", "pytest", "pytest-asyncio", "pytest-cov", 
 
 [metadata]
 lock-version = "2.1"
-python-versions = "^3.10"
-content-hash = "e4970b60efd372718497aa3b0dfbbe29402edd821a89561fcba54c7aa78c9f7c"
+python-versions = ">=3.10,<4.0"
+content-hash = "eff3df1c0f385fb7bfc9ba452f0630b5fd31a177a8f56393b476cc1d2d8eb4c2"
