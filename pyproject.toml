@@ -29,6 +29,10 @@ dev = [
 ]
 
 [tool.poetry]
+name = "chaos-api"
+version = "0.1.0"
+description = "A chaos API that generates fake REST responses using LLM"
+authors = ["John Sosoka"]
 packages = [{include = "chaos_api", from = "src"}]
 
 [build-system]
